@@ -46,6 +46,7 @@ rm(toInstallList);rm(baseR);rm(pkgs);
 
 # 3) install OHDSI packages
 install.packages('/home/rstudio/pkgs/Andromeda_0.6.1.tar.gz', repos = NULL, type = 'source');
+install.packages("RSQLite",repos = cran) # force update RSQLite for andromeda
 install.packages('/home/rstudio/pkgs/SqlRender_1.9.2.tar.gz', repos = NULL, type = 'source');
 install.packages('/home/rstudio/pkgs/DatabaseConnector_5.0.4.tar.gz', repos = NULL, type = 'source');
 install.packages('/home/rstudio/pkgs/ParallelLogger_2.0.2.tar.gz', repos = NULL, type = 'source');
