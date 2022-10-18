@@ -1,7 +1,7 @@
 # Dockerfile
 
 # Specify a Rocker/Rstudio image
-FROM rocker/verse:3.5.1
+FROM rocker/verse:4.2.1
 
 LABEL maintanier "HIRA"
 
