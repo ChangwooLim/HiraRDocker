@@ -61,14 +61,21 @@ install.packages('/home/rstudio/pkgs/CohortMethod_4.2.0.tar.gz', repos = NULL, t
 install.packages('/home/rstudio/pkgs/CohortDiagnostics_2.0.0.tar.gz', repos = NULL, type = 'source');
 install.packages('/home/rstudio/pkgs/PatientLevelPrediction_5.0.5.tar.gz', repos = NULL, type = 'source');
 
-
 # 4) install JDBC driver
 DatabaseConnector::downloadJdbcDrivers(dbms = 'oracle',pathToDriver = '/home/rstudio/jdbc');
 
 # 5) conda environment settings
-reticulate::install_miniconda();
-PatientLevelPrediction::configurePython(envname='r-reticulate', envtype = 'conda');
-devtools::install_github('rstudio/keras');
-keras::install_keras(method = 'conda');
-reticulate::conda_install(envname='r-reticulate', packages = c('scikit-survival'), forge = TRUE, pip = TRUE);
-reticulate::conda_install(envname='r-reticulate', packages = c('pytorch', 'torchvision', 'cpuonly'), forge = TRUE, pip = FALSE, channel = 'pytorch', pip_ignore_installed = TRUE, conda = 'auto')
+# reticulate::install_miniconda();
+# PatientLevelPrediction::configurePython(envname='r-reticulate', envtype = 'conda');
+
+# location <- reticulate::conda_create(envname = "conda", 
+#                 packages = "python", conda = "auto")
+
+# devtools::install_github('rstudio/keras');
+# install.packages('/tfautograph_0.3.2.tar.gz', repos = NULL, type = 'source');
+# install.packages('/tensorflow', repos = NULL, type = 'source');
+# devtools::install_github('rstudio/keras@R-3.3-compat');
+
+# keras::install_keras(method = 'conda');
+# reticulate::conda_install(envname='r-reticulate', packages = c('scikit-survival'), forge = TRUE, pip = TRUE);
+# reticulate::conda_install(envname='r-reticulate', packages = c('pytorch', 'torchvision', 'cpuonly'), forge = TRUE, pip = FALSE, channel = 'pytorch', pip_ignore_installed = TRUE, conda = 'auto')
